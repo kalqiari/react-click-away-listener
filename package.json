@@ -1,0 +1,71 @@
+{
+	"name": "react-click-away-listener",
+	"version": "1.4.3",
+	"description": "A simple click away listener built with React Hooks",
+	"main": "dist/react-click-away-listener.js",
+	"module": "dist/react-click-away-listener.es.js",
+	"types": "dist/index.d.ts",
+	"umd": "dist/react-click-away-listener.umd.js",
+	"scripts": {
+		"test": "jest",
+		"lint": "eslint src/*",
+		"coverage": "jest --coverage",
+		"prepublish": "npm run build",
+		"build:rollup": "rollup -c rollup.config.js",
+		"build:declaration": "tsc",
+		"cleanup": "rimraf dist",
+		"postinstall": "echo 'Thanks for installing the package.\nPlease help spread the word to end SARS in my country https://en.wikipedia.org/wiki/End_SARS'",
+		"build": "npm run cleanup && npm-run-all build:*",
+		"report-coverage": "cat ./coverage/lcov.info | coveralls",
+		"prettier": "prettier --write '{src,__tests__}/*.tsx'",
+		"print-file-size": "cat dist/react-click-away-listener.js | gzip | wc -c"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"author": "Ademola Adegbuyi <ooade96@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/preset-env": "^7.3.1",
+		"@babel/preset-react": "^7.0.0",
+		"@babel/preset-typescript": "^7.10.4",
+		"@rollup/plugin-babel": "^5.2.0",
+		"@testing-library/react": "^9.3.1",
+		"@types/jest": "^24.0.21",
+		"@types/react": "^16.9.11",
+		"@typescript-eslint/parser": "^3.2.0",
+		"coveralls": "^3.1.0",
+		"eslint": "^5.13.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.16.0",
+		"eslint-plugin-jsx-a11y": "^6.2.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-react": "^7.12.4",
+		"eslint-plugin-react-hooks": "^1.6.0",
+		"ghooks": "^2.0.4",
+		"jest": "^24.9.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.0.5",
+		"react": "^16.11.0",
+		"react-dom": "^16.11.0",
+		"rimraf": "^3.0.2",
+		"rollup": "^1.26.3",
+		"rollup-plugin-terser": "^7.0.0",
+		"typescript": "^3.6.4"
+	},
+	"peerDependencies": {
+		"react": "^16.11.0",
+		"react-dom": "^16.11.0"
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"<rootDir>/src/**.tsx"
+		]
+	},
+	"config": {
+		"ghooks": {
+			"pre-commit": "npm run prettier"
+		}
+	}
+}
